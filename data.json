@@ -1,0 +1,114 @@
+[
+    {
+        "date": "2024-03-22",
+        "match_no": 1,
+        "match_between": "KKR vs RCB",
+        "players": {
+            "Abhishek": 928,
+            "Aman": 801,
+            "Vikki": 776.5,
+            "Vasu": 794,
+            "Nabh": 0
+        },
+        "entry_fee": 50,
+        "winning_prize": 180
+    },
+    {
+        "date": "2024-03-23",
+        "match_no": 2,
+        "match_between": "SRH vs RR",
+        "players": {
+            "Abhishek": 835.5,
+            "Aman": 1047.5,
+            "Vikki": 784.5,
+            "Vasu": 1128.5,
+            "Nabh": 0
+        },
+        "entry_fee": 50,
+        "winning_prize": 180
+    },
+     {
+        "date": "2024-03-23",
+        "match_no": 3,
+        "match_between": "CSK vs MI",
+        "players": {
+            "Abhishek": 748.5,
+            "Aman": 740.5,
+            "Vikki": 661.5,
+            "Vasu": 686.5,
+            "Nabh": 0
+        },
+        "entry_fee": 50,
+        "winning_prize": 126
+    },
+    {
+        "date": "2024-03-24",
+        "match_no": 4,
+        "match_between": "LSG vs DC",
+        "players": {
+            "Abhishek": 798,
+            "Aman": 908,
+            "Vikki": 949,
+            "Vasu": 867.5,
+            "Nabh": 0
+        },
+        "entry_fee": 50,
+        "winning_prize": 100
+    },
+     {
+        "date": "2024-03-25",
+        "match_no": 5,
+        "match_between": "PBKS vs GT",
+        "players": {
+            "Abhishek": 844,
+            "Aman": 907.5,
+            "Vikki": 873.5,
+            "Vasu": 907,
+            "Nabh": 0
+        },
+        "entry_fee": 50,
+        "winning_prize": 180
+    },
+    {
+        "date": "2024-03-26",
+        "match_no": 6,
+        "match_between": "RR vs KKR",
+        "players": {
+            "Abhishek": 781.5,
+            "Aman": 768,
+            "Vikki": 664,
+            "Vasu": 700.5,
+            "Nabh": 678
+        },
+        "entry_fee": 50,
+        "winning_prize": 180
+    },
+     {
+        "date": "2024-03-27",
+        "match_no": 7,
+        "match_between": "SRH vs LSG",
+        "players": {
+            "Abhishek": 541.5,
+            "Aman": 764,
+            "Vikki": 901,
+            "Vasu": 849,
+            "Nabh": 787.5
+        },
+        "entry_fee": 50,
+        "winning_prize": 158
+    },
+    {
+        "date": "2024-03-28",
+        "match_no": 8,
+        "match_between": "CSK vs RCB",
+        "players": {
+            "Abhishek": 791.5,
+            "Aman": 690.5,
+            "Vikki": 810.5,
+            "Vasu": 725.5,
+            "Nabh": 728
+        },
+        "entry_fee": 50,
+        "winning_prize": 225
+    }
+]

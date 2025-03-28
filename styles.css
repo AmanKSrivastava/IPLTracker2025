@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Header */
+h1 {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  margin: 0;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  position: relative;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Sorting Icons */
+th span {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+th:hover {
+  background-color: #0056b3;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Buttons */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  th,
+  td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
