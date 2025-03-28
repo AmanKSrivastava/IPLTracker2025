@@ -1,100 +1,124 @@
 /* General Styles */
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  text-align: center;
+  background-color: #f4f4f4;
 }
 
-/* Header */
-h1 {
-  background-color: #007bff;
-  color: white;
-  padding: 15px;
-  margin: 0;
-}
-
-/* Container */
+/* Main Container */
 .container {
-  width: 90%;
   max-width: 1200px;
-  margin: 20px auto;
-  background: white;
+  margin: auto;
   padding: 20px;
+  background: white;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Tables */
+/* Headings */
+h1,
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Responsive Table Container */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  background: white;
+  min-width: 800px; /* Prevents tables from becoming too small */
 }
 
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: center;
-  position: relative;
-}
-
+/* Table Header */
 th {
   background-color: #007bff;
   color: white;
-  cursor: pointer;
-  user-select: none;
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
-/* Sorting Icons */
-th span {
-  display: inline-block;
-  margin-left: 8px;
-  font-size: 12px;
-  opacity: 0.6;
+/* Table Cells */
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 
-th:hover {
-  background-color: #0056b3;
+/* Alternate Row Colors */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-tr:nth-child(even) {
-  background-color: #f8f9fa;
+/* Profit/Loss Color */
+td[style*="color: green"] {
+  font-weight: bold;
+}
+td[style*="color: red"] {
+  font-weight: bold;
 }
 
-tr:hover {
-  background-color: #e9ecef;
+/* Scrollbar (For Webkit browsers like Chrome, Safari) */
+.table-container::-webkit-scrollbar {
+  height: 8px;
 }
-
-/* Buttons */
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  margin: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
-
-button:hover {
-  background-color: #0056b3;
+.table-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  th,
-  td {
-    font-size: 14px;
-    padding: 8px;
+  .container {
+    padding: 10px;
   }
 
-  button {
+  th,
+  td {
+    padding: 8px;
     font-size: 14px;
-    padding: 8px 12px;
+  }
+
+  h1,
+  h2 {
+    font-size: 20px;
+  }
+
+  .table-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  th,
+  td {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  h1,
+  h2 {
+    font-size: 18px;
   }
 }
