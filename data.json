@@ -110,5 +110,19 @@
         },
         "entry_fee": 50,
         "winning_prize": 225
+    },
+    {
+        "date": "2024-03-29",
+        "match_no": 9,
+        "match_between": "GT vs MI",
+        "players": {
+            "Abhishek": 605,
+            "Aman": 830.5,
+            "Vikki": 645,
+            "Vasu": 811.5,
+            "Nabh": 807.5
+        },
+        "entry_fee": 50,
+        "winning_prize": 225
     }
 ]
