@@ -124,5 +124,19 @@
         },
         "entry_fee": 50,
         "winning_prize": 225
+    },
+    {
+        "date": "2024-03-30",
+        "match_no": 10,
+        "match_between": "DC vs SRH",
+        "players": {
+            "Abhishek": 823.5,
+            "Aman": 478.5,
+            "Vikki": 618,
+            "Vasu": 600.5,
+            "Nabh": 460
+        },
+        "entry_fee": 50,
+        "winning_prize": 225
     }
 ]
