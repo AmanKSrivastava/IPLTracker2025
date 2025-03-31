@@ -152,5 +152,19 @@
         },
         "entry_fee": 50,
         "winning_prize": 225
+    },
+    {
+        "date": "2024-03-31",
+        "match_no": 12,
+        "match_between": "MI vs KKR",
+        "players": {
+            "Abhishek": 435,
+            "Aman": 527,
+            "Vikki": 474.5,
+            "Vasu": 0,
+            "Nabh": 408.5
+        },
+        "entry_fee": 50,
+        "winning_prize": 225
     }
 ]
