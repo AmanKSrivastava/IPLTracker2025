@@ -166,5 +166,19 @@
         },
         "entry_fee": 50,
         "winning_prize": 225
+    },
+    {
+        "date": "2024-04-01",
+        "match_no": 13,
+        "match_between": "LSG vs PBKS",
+        "players": {
+            "Abhishek": 548,
+            "Aman": 724,
+            "Vikki": 579,
+            "Vasu": 610.5,
+            "Nabh": 610
+        },
+        "entry_fee": 50,
+        "winning_prize": 225
     }
 ]
