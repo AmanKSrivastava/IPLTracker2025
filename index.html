@@ -12,42 +12,42 @@
 
       <h2>Leaderboard</h2>
       <div class="table-container">
-        <table>
+        <table id="leaderboard">
           <thead>
             <tr>
-              <th>Rank</th>
-              <th>Player</th>
-              <th>Total Points</th>
-              <th>Matches Played</th>
-              <th>Avg Points/Match</th>
-              <th>Total Winnings (₹)</th>
-              <th>Entry Fee Paid (₹)</th>
-              <th>Net Profit/Loss (₹)</th>
-              <th>Matches Won</th>
-              <th>Last Match Points</th>
+              <th data-key="rank">Rank</th>
+              <th data-key="name">Player</th>
+              <th data-key="totalPoints">Total Points</th>
+              <th data-key="matchesPlayed">Matches Played</th>
+              <th data-key="avgPoints">Avg. Points</th>
+              <th data-key="totalWinnings">Total Winnings (₹)</th>
+              <th data-key="entryFeePaid">Entry Fee Paid (₹)</th>
+              <th data-key="netProfit">Net Profit (₹)</th>
+              <th data-key="matchesWon">Matches Won</th>
+              <th data-key="maxPointsEver">Max Points in a Match</th>
             </tr>
           </thead>
-          <tbody id="leaderboard"></tbody>
+          <tbody id="leaderboard-body"></tbody>
         </table>
       </div>
 
       <h2>Match History</h2>
       <div class="table-container">
-        <table>
+        <table id="matchHistory">
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Match No</th>
-              <th>Match</th>
-              <th>Winner</th>
-              <th>Points (Abhishek)</th>
-              <th>Points (Aman)</th>
-              <th>Points (Vikki)</th>
-              <th>Points (Vasu)</th>
-              <th>Points (Nabh)</th>
+              <th data-key="date">Date</th>
+              <th data-key="match_no">Match No</th>
+              <th data-key="match_between">Match</th>
+              <th data-key="winner">Winner</th>
+              <th data-key="pointsAbhishek">Points (Abhishek)</th>
+              <th data-key="pointsAman">Points (Aman)</th>
+              <th data-key="pointsVikki">Points (Vikki)</th>
+              <th data-key="pointsVasu">Points (Vasu)</th>
+              <th data-key="pointsNabh">Points (Nabh)</th>
             </tr>
           </thead>
-          <tbody id="matchHistory"></tbody>
+          <tbody id="match-history-body"></tbody>
         </table>
       </div>
     </div>

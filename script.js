@@ -1,18 +1,27 @@
-// Fetch data from data.json and update the tables
+let currentPage = 1;
+const rowsPerPage = 5;
+let matchData = [];
+let sortOrder = {}; // Store the current sorting order
+
+// Fetch data from the JSON file
 fetch("data.json")
   .then((response) => response.json())
   .then((data) => {
+    matchData = data;
     updateLeaderboard(data);
-    updateMatchHistory(data);
+    updateMatchHistory();
+    attachSortingListeners(); // Ensure sorting event listeners are attached
   })
   .catch((error) => console.error("Error loading data:", error));
 
+// Update the leaderboard table
 function updateLeaderboard(data) {
-  const leaderboardTable = document.getElementById("leaderboard");
-  leaderboardTable.innerHTML = ""; // Clear table before adding rows
+  const leaderboardTable = document.getElementById("leaderboard-body");
+  leaderboardTable.innerHTML = ""; // Clear the table
 
-  const players = {}; // Object to store player stats
+  const players = {};
 
+  // Collect player data from the matches
   data.forEach((match) => {
     Object.keys(match.players).forEach((player) => {
       if (!players[player]) {
@@ -23,21 +32,20 @@ function updateLeaderboard(data) {
           totalWinnings: 0,
           entryFeePaid: 0,
           matchesWon: 0,
-          lastMatchPoints: "N/A",
+          maxPointsEver: 0,
         };
       }
 
-      // If player participated in the match (points > 0)
       if (match.players[player] !== undefined && match.players[player] !== 0) {
         players[player].totalPoints += match.players[player];
         players[player].matchesPlayed += 1;
-        players[player].lastMatchPoints = match.players[player];
-
-        // Only add entry fee if player participated
         players[player].entryFeePaid += match.entry_fee;
+
+        if (match.players[player] > players[player].maxPointsEver) {
+          players[player].maxPointsEver = match.players[player];
+        }
       }
 
-      // If player won, add winnings
       if (
         match.winning_prize > 0 &&
         match.players[player] === Math.max(...Object.values(match.players))
@@ -48,14 +56,23 @@ function updateLeaderboard(data) {
     });
   });
 
-  // Convert players object to array and sort by total points
-  const sortedPlayers = Object.values(players).sort(
-    (a, b) => b.totalPoints - a.totalPoints
-  );
+  let sortedPlayers = Object.values(players);
 
+  // Apply sorting if a column is selected
+  if (sortOrder.leaderboard) {
+    sortedPlayers.sort((a, b) => {
+      const key = sortOrder.leaderboard.key;
+      return sortOrder.leaderboard.order === "asc"
+        ? a[key] - b[key]
+        : b[key] - a[key];
+    });
+  } else {
+    sortedPlayers.sort((a, b) => b.totalPoints - a.totalPoints); // Default sorting
+  }
+
+  // Populate the leaderboard table
   sortedPlayers.forEach((player, index) => {
     const row = document.createElement("tr");
-
     const avgPoints =
       player.matchesPlayed > 0
         ? (player.totalPoints / player.matchesPlayed).toFixed(2)
@@ -72,22 +89,42 @@ function updateLeaderboard(data) {
       <td>₹${player.entryFeePaid}</td>
       <td style="color: ${
         netProfit > 0 ? "green" : netProfit < 0 ? "red" : "black"
-      };">
-        ₹${netProfit}
-      </td>
+      };">₹${netProfit}</td>
       <td>${player.matchesWon}</td>
-      <td>${player.lastMatchPoints}</td>
+      <td>${player.maxPointsEver}</td>
     `;
 
     leaderboardTable.appendChild(row);
   });
 }
 
-function updateMatchHistory(data) {
-  const matchHistoryTable = document.getElementById("matchHistory");
-  matchHistoryTable.innerHTML = ""; // Clear table before adding rows
+// Update the match history table
+function updateMatchHistory() {
+  const matchHistoryTable = document.getElementById("match-history-body");
+  matchHistoryTable.innerHTML = "";
 
-  data.forEach((match) => {
+  let paginatedMatches = matchData.slice(
+    (currentPage - 1) * rowsPerPage,
+    currentPage * rowsPerPage
+  );
+
+  if (sortOrder.matchHistory) {
+    paginatedMatches.sort((a, b) => {
+      const key = sortOrder.matchHistory.key;
+      if (typeof a[key] === "string") {
+        return sortOrder.matchHistory.order === "asc"
+          ? a[key].localeCompare(b[key])
+          : b[key].localeCompare(a[key]);
+      } else {
+        return sortOrder.matchHistory.order === "asc"
+          ? a[key] - b[key]
+          : b[key] - a[key];
+      }
+    });
+  }
+
+  // Populate the match history table
+  paginatedMatches.forEach((match) => {
     const row = document.createElement("tr");
 
     row.innerHTML = `
@@ -95,26 +132,63 @@ function updateMatchHistory(data) {
       <td>${match.match_no}</td>
       <td>${match.match_between}</td>
       <td>${getMatchWinner(match.players)}</td>
-      <td>${
-        match.players.Abhishek !== undefined ? match.players.Abhishek : "N/A"
-      }</td>
-      <td>${match.players.Aman !== undefined ? match.players.Aman : "N/A"}</td>
-      <td>${
-        match.players.Vikki !== undefined ? match.players.Vikki : "N/A"
-      }</td>
-      <td>${match.players.Vasu !== undefined ? match.players.Vasu : "N/A"}</td>
-      <td>${match.players.Nabh !== undefined ? match.players.Nabh : "N/A"}</td>
+      <td>${match.players["Abhishek"] || 0}</td>
+      <td>${match.players["Aman"] || 0}</td>
+      <td>${match.players["Vikki"] || 0}</td>
+      <td>${match.players["Vasu"] || 0}</td>
+      <td>${match.players["Nabh"] || 0}</td>
     `;
 
     matchHistoryTable.appendChild(row);
   });
 }
 
-// Function to get match winner based on highest points
 function getMatchWinner(players) {
-  const maxPoints = Math.max(...Object.values(players));
-  const winners = Object.keys(players).filter(
-    (player) => players[player] === maxPoints
+  const maxPointsPlayer = Object.entries(players).reduce(
+    (max, [player, points]) => (points > max[1] ? [player, points] : max),
+    ["", 0]
   );
-  return winners.join(", ") || "N/A";
+  return maxPointsPlayer[0] || "No Winner";
+}
+
+// Attach sorting functionality to table headers
+function attachSortingListeners() {
+  const headers = document.querySelectorAll("th");
+
+  headers.forEach((header) => {
+    header.addEventListener("click", () => {
+      const tableId = header.closest("table").id;
+      const key = header.getAttribute("data-key");
+
+      if (!sortOrder[tableId]) {
+        sortOrder[tableId] = {};
+      }
+
+      const order =
+        sortOrder[tableId].key === key && sortOrder[tableId].order === "asc"
+          ? "desc"
+          : "asc";
+      sortOrder[tableId] = { key, order };
+
+      if (tableId === "leaderboard") {
+        updateLeaderboard(matchData);
+      } else if (tableId === "matchHistory") {
+        updateMatchHistory();
+      }
+    });
+  });
+}
+
+function nextPage() {
+  if (currentPage < Math.ceil(matchData.length / rowsPerPage)) {
+    currentPage++;
+    updateMatchHistory();
+  }
+}
+
+function prevPage() {
+  if (currentPage > 1) {
+    currentPage--;
+    updateMatchHistory();
+  }
 }
