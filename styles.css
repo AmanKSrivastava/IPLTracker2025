@@ -115,7 +115,44 @@ tbody tr:nth-child(even) {
 .table-container::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+.dashboard-header {
+  text-align: center;
+  margin: 20px 0;
+}
 
+.dashboard-header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #ff8c00, #ff4500); /* Gradient effect */
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+
+  font-family: "Arial", sans-serif;
+}
+.table-header {
+  text-align: center;
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 28px; /* Slightly smaller on mobile */
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header h1 {
+    font-size: 24px; /* Even smaller on very small screens */
+    padding: 6px;
+  }
+}
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
   .table-container {
