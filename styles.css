@@ -3,7 +3,8 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
-  table-layout: auto; /* Allow table to adjust width automatically */
+  table-layout: auto;
+  position: relative;
 }
 
 /* Table Header and Cells */
@@ -49,29 +50,32 @@ tbody tr:nth-child(even) {
 /* Scrollable Table Container */
 .table-container {
   width: 100%;
-  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-x: auto;
   margin-top: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
   padding: 5px;
 }
 
-/* Scrollbar (For Webkit browsers like Chrome, Safari) */
-.table-container::-webkit-scrollbar {
-  height: 8px;
+/* Fixed Header Styling */
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.table-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.table-container thead {
+  position: sticky;
+  top: 0;
+  background-color: #333;
+  z-index: 1;
 }
 
-.table-container::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-.table-container::-webkit-scrollbar-thumb:hover {
-  background: #555;
+/* Table Body Scroll */
+.table-container tbody {
+  display: block;
+  max-height: 300px; /* Set the height of the scrollable body */
+  overflow-y: auto;
+  width: 100%;
 }
 
 /* Pagination Styling */
@@ -94,11 +98,32 @@ tbody tr:nth-child(even) {
   background-color: #0056b3;
 }
 
+/* Scrollbar (For Webkit browsers like Chrome, Safari) */
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
-  /* Adjust the container padding and font sizes */
-  .container {
-    padding: 10px;
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .table-container table {
+    min-width: 600px;
   }
 
   th,
@@ -107,41 +132,25 @@ tbody tr:nth-child(even) {
     font-size: 14px;
   }
 
-  h1,
-  h2 {
-    font-size: 20px;
-  }
-
-  /* Ensure the table container is scrollable on smaller screens */
-  .table-container {
-    overflow-x: auto;
-  }
-
-  .table-container table {
-    min-width: 600px; /* Ensure tables are scrollable */
+  #pagination button {
+    padding: 8px 12px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
-  /* Further reduce padding and font size for smaller screens */
-  th,
-  td {
-    padding: 6px;
-    font-size: 12px;
-  }
-
-  h1,
-  h2 {
-    font-size: 18px;
-  }
-
-  /* Ensure the table container is scrollable on very small screens */
   .table-container {
     overflow-x: auto;
   }
 
   .table-container table {
-    min-width: 400px; /* Ensure tables are scrollable */
+    min-width: 400px;
+  }
+
+  th,
+  td {
+    padding: 6px;
+    font-size: 12px;
   }
 
   #pagination button {
