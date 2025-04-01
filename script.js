@@ -1,7 +1,10 @@
 let currentPage = 1;
 const rowsPerPage = 5;
 let matchData = [];
-let sortOrder = {}; // Store the current sorting order
+let sortOrder = {
+  leaderboard: { key: "", order: "asc" },
+  matchHistory: { key: "", order: "asc" },
+};
 
 // Fetch data from the JSON file
 fetch("data.json")
@@ -59,7 +62,7 @@ function updateLeaderboard(data) {
   let sortedPlayers = Object.values(players);
 
   // Apply sorting if a column is selected
-  if (sortOrder.leaderboard) {
+  if (sortOrder.leaderboard.key) {
     sortedPlayers.sort((a, b) => {
       const key = sortOrder.leaderboard.key;
       return sortOrder.leaderboard.order === "asc"
@@ -72,13 +75,13 @@ function updateLeaderboard(data) {
 
   // Populate the leaderboard table
   sortedPlayers.forEach((player, index) => {
-    const row = document.createElement("tr");
     const avgPoints =
       player.matchesPlayed > 0
         ? (player.totalPoints / player.matchesPlayed).toFixed(2)
         : "N/A";
     const netProfit = player.totalWinnings - player.entryFeePaid;
 
+    row = document.createElement("tr");
     row.innerHTML = `
       <td>${index + 1}</td>
       <td>${player.name}</td>
@@ -108,7 +111,7 @@ function updateMatchHistory() {
     currentPage * rowsPerPage
   );
 
-  if (sortOrder.matchHistory) {
+  if (sortOrder.matchHistory.key) {
     paginatedMatches.sort((a, b) => {
       const key = sortOrder.matchHistory.key;
       if (typeof a[key] === "string") {
@@ -141,6 +144,9 @@ function updateMatchHistory() {
 
     matchHistoryTable.appendChild(row);
   });
+
+  // Update Pagination
+  updatePagination();
 }
 
 function getMatchWinner(players) {
@@ -160,16 +166,17 @@ function attachSortingListeners() {
       const tableId = header.closest("table").id;
       const key = header.getAttribute("data-key");
 
-      if (!sortOrder[tableId]) {
-        sortOrder[tableId] = {};
+      // Check if the sort order is already set for this column
+      if (sortOrder[tableId].key === key) {
+        // Toggle the sort order
+        sortOrder[tableId].order =
+          sortOrder[tableId].order === "asc" ? "desc" : "asc";
+      } else {
+        // Set the sort order to ascending by default
+        sortOrder[tableId] = { key, order: "asc" };
       }
 
-      const order =
-        sortOrder[tableId].key === key && sortOrder[tableId].order === "asc"
-          ? "desc"
-          : "asc";
-      sortOrder[tableId] = { key, order };
-
+      // Update the corresponding table based on which table was clicked
       if (tableId === "leaderboard") {
         updateLeaderboard(matchData);
       } else if (tableId === "matchHistory") {
@@ -190,5 +197,25 @@ function prevPage() {
   if (currentPage > 1) {
     currentPage--;
     updateMatchHistory();
+  }
+}
+
+function updatePagination() {
+  const totalPages = Math.ceil(matchData.length / rowsPerPage);
+  const pagination = document.getElementById("pagination");
+  pagination.innerHTML = "";
+
+  if (currentPage > 1) {
+    const prevButton = document.createElement("button");
+    prevButton.textContent = "Previous";
+    prevButton.addEventListener("click", prevPage);
+    pagination.appendChild(prevButton);
+  }
+
+  if (currentPage < totalPages) {
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Next";
+    nextButton.addEventListener("click", nextPage);
+    pagination.appendChild(nextButton);
   }
 }

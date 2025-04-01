@@ -3,53 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dream11 IPL Stats</title>
+    <title>Leaderboard & Match History</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Dream11 IPL 2025 Stats</h1>
+    <h1>Leaderboard</h1>
+    <table id="leaderboard">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th data-key="name">Player</th>
+          <th data-key="totalPoints">Total Points</th>
+          <th data-key="matchesPlayed">Matches Played</th>
+          <th data-key="avgPoints">Avg Points</th>
+          <th data-key="totalWinnings">Total Winnings</th>
+          <th data-key="entryFeePaid">Entry Fee Paid</th>
+          <th data-key="netProfit">Net Profit</th>
+          <th data-key="matchesWon">Matches Won</th>
+          <th data-key="maxPointsEver">Max Points Ever</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard-body">
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
 
-      <h2>Leaderboard</h2>
-      <div class="table-container">
-        <table id="leaderboard">
-          <thead>
-            <tr>
-              <th data-key="rank">Rank</th>
-              <th data-key="name">Player</th>
-              <th data-key="totalPoints">Total Points</th>
-              <th data-key="matchesPlayed">Matches Played</th>
-              <th data-key="avgPoints">Avg. Points</th>
-              <th data-key="totalWinnings">Total Winnings (₹)</th>
-              <th data-key="entryFeePaid">Entry Fee Paid (₹)</th>
-              <th data-key="netProfit">Net Profit (₹)</th>
-              <th data-key="matchesWon">Matches Won</th>
-              <th data-key="maxPointsEver">Max Points in a Match</th>
-            </tr>
-          </thead>
-          <tbody id="leaderboard-body"></tbody>
-        </table>
-      </div>
+    <h1>Match History</h1>
+    <table id="matchHistory">
+      <thead>
+        <tr>
+          <th data-key="date">Date</th>
+          <th data-key="match_no">Match No</th>
+          <th data-key="match_between">Match Between</th>
+          <th data-key="winner">Winner</th>
+          <th data-key="Abhishek">Abhishek</th>
+          <th data-key="Aman">Aman</th>
+          <th data-key="Vikki">Vikki</th>
+          <th data-key="Vasu">Vasu</th>
+          <th data-key="Nabh">Nabh</th>
+        </tr>
+      </thead>
+      <tbody id="match-history-body">
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
 
-      <h2>Match History</h2>
-      <div class="table-container">
-        <table id="matchHistory">
-          <thead>
-            <tr>
-              <th data-key="date">Date</th>
-              <th data-key="match_no">Match No</th>
-              <th data-key="match_between">Match</th>
-              <th data-key="winner">Winner</th>
-              <th data-key="pointsAbhishek">Points (Abhishek)</th>
-              <th data-key="pointsAman">Points (Aman)</th>
-              <th data-key="pointsVikki">Points (Vikki)</th>
-              <th data-key="pointsVasu">Points (Vasu)</th>
-              <th data-key="pointsNabh">Points (Nabh)</th>
-            </tr>
-          </thead>
-          <tbody id="match-history-body"></tbody>
-        </table>
-      </div>
+    <div id="pagination">
+      <!-- Pagination buttons will be added dynamically -->
     </div>
 
     <script src="script.js"></script>
