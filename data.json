@@ -250,5 +250,19 @@
     },
     "entry_fee": 55,
     "winning_prize": 248
+  },
+  {
+    "date": "2024-04-06",
+    "match_no": 19,
+    "match_between": "SRH vs GT",
+    "players": {
+      "Abhishek": 785,
+      "Aman": 559,
+      "Vikki": 710,
+      "Vasu": 526.5,
+      "Nabh": 717
+    },
+    "entry_fee": 55,
+    "winning_prize": 248
   }
 ]
