@@ -264,5 +264,19 @@
     },
     "entry_fee": 55,
     "winning_prize": 248
+  },
+  {
+    "date": "2024-04-07",
+    "match_no": 20,
+    "match_between": "MI vs RCB",
+    "players": {
+      "Abhishek": 794,
+      "Aman": 758.5,
+      "Vikki": 962,
+      "Vasu": 885,
+      "Nabh": 880
+    },
+    "entry_fee": 55,
+    "winning_prize": 248
   }
 ]
