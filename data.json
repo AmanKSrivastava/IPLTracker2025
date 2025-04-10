@@ -306,5 +306,19 @@
     },
     "entry_fee": 55,
     "winning_prize": 248
+  },
+  {
+    "date": "2024-04-08",
+    "match_no": 23,
+    "match_between": "RR vs GT",
+    "players": {
+      "Abhishek": 802,
+      "Aman": 630,
+      "Vikki": 786,
+      "Vasu": 828,
+      "Nabh": 759
+    },
+    "entry_fee": 55,
+    "winning_prize": 248
   }
 ]
