@@ -404,5 +404,19 @@
     },
     "entry_fee": 56,
     "winning_prize": 202
+  },
+  {
+    "date": "2024-04-13",
+    "match_no": 30,
+    "match_between": "LSG vs CSK",
+    "players": {
+      "Abhishek": 695.5,
+      "Aman": 566,
+      "Vikki": 6125,
+      "Vasu": 620,
+      "Nabh": 0
+    },
+    "entry_fee": 56,
+    "winning_prize": 202
   }
 ]
