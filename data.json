@@ -406,7 +406,7 @@
     "winning_prize": 202
   },
   {
-    "date": "2024-04-13",
+    "date": "2024-04-14",
     "match_no": 30,
     "match_between": "LSG vs CSK",
     "players": {
@@ -414,6 +414,20 @@
       "Aman": 566,
       "Vikki": 612,
       "Vasu": 620,
+      "Nabh": 0
+    },
+    "entry_fee": 56,
+    "winning_prize": 202
+  },
+  {
+    "date": "2024-04-15",
+    "match_no": 31,
+    "match_between": "PBKS vs KKR",
+    "players": {
+      "Abhishek": 827,
+      "Aman": 728,
+      "Vikki": 800,
+      "Vasu": 833,
       "Nabh": 0
     },
     "entry_fee": 56,
