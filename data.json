@@ -432,5 +432,19 @@
     },
     "entry_fee": 56,
     "winning_prize": 202
+  },
+  {
+    "date": "2024-04-16",
+    "match_no": 32,
+    "match_between": "DC vs RR",
+    "players": {
+      "Abhishek": 777.5,
+      "Aman": 942.5,
+      "Vikki": 777.5,
+      "Vasu": 738.5,
+      "Nabh": 0
+    },
+    "entry_fee": 56,
+    "winning_prize": 202
   }
 ]
