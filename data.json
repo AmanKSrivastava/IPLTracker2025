@@ -446,5 +446,19 @@
     },
     "entry_fee": 56,
     "winning_prize": 202
+  },
+  {
+    "date": "2024-04-17",
+    "match_no": 33,
+    "match_between": "MI vs SRH",
+    "players": {
+      "Abhishek": 594,
+      "Aman": 686.5,
+      "Vikki": 625.5,
+      "Vasu": 819,
+      "Nabh": 0
+    },
+    "entry_fee": 56,
+    "winning_prize": 202
   }
 ]
