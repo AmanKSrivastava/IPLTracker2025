@@ -86,6 +86,9 @@ function updateLeaderboard(data) {
         };">₹${netProfit}</td>
         <td>${player.matchesWon}</td>
         <td>${player.maxPointsEver}</td>
+        <td>${Math.floor(
+          (player.matchesWon * 100) / player.matchesPlayed
+        )} %</td>
       </tr>`;
   });
 }
