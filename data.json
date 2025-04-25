@@ -572,5 +572,34 @@
     },
     "entry_fee": 56,
     "winning_prize": 202
+  },
+  {
+    "date": "2024-04-24",
+    "match_no": 42,
+    "match_between": "RCB vs RR",
+    "players": {
+      "Abhishek": 893.5,
+      "Aman": 842.5,
+      "Vikki": 959.5,
+      "Vasu": 903.5,
+      "Nabh": 0,
+      "Outsider": 1009.5
+    },
+    "entry_fee": 57,
+    "winning_prize": 257
+  },
+  {
+    "date": "2024-04-25",
+    "match_no": 43,
+    "match_between": "CSK vs SRH",
+    "players": {
+      "Abhishek": 554,
+      "Aman": 745,
+      "Vikki": 694.5,
+      "Vasu": 723.5,
+      "Nabh": 698.5
+    },
+    "entry_fee": 57,
+    "winning_prize": 257
   }
 ]
