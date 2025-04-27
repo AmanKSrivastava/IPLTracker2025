@@ -601,5 +601,19 @@
     },
     "entry_fee": 57,
     "winning_prize": 257
+  },
+  {
+    "date": "2024-04-27",
+    "match_no": 45,
+    "match_between": "MI vs LSG",
+    "players": {
+      "Abhishek": 969.5,
+      "Aman": 685,
+      "Vikki": 872.5,
+      "Vasu": 935.5,
+      "Nabh": 893
+    },
+    "entry_fee": 56,
+    "winning_prize": 252
   }
 ]
