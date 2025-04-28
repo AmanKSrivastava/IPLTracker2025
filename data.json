@@ -615,5 +615,33 @@
     },
     "entry_fee": 56,
     "winning_prize": 252
+  },
+  {
+    "date": "2024-04-27",
+    "match_no": 46,
+    "match_between": "DC vs RCB",
+    "players": {
+      "Abhishek": 603,
+      "Aman": 756,
+      "Vikki": 886,
+      "Vasu": 653.5,
+      "Nabh": 0
+    },
+    "entry_fee": 56,
+    "winning_prize": 202
+  },
+  {
+    "date": "2024-04-28",
+    "match_no": 47,
+    "match_between": "RR vs GT",
+    "players": {
+      "Abhishek": 1000,
+      "Aman": 1037,
+      "Vikki": 989,
+      "Vasu": 798,
+      "Nabh": 0
+    },
+    "entry_fee": 56,
+    "winning_prize": 202
   }
 ]
