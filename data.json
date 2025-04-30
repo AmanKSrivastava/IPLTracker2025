@@ -643,5 +643,19 @@
     },
     "entry_fee": 56,
     "winning_prize": 202
+  },
+  {
+    "date": "2024-04-29",
+    "match_no": 48,
+    "match_between": "KKR vs DC",
+    "players": {
+      "Abhishek": 1040.5,
+      "Aman": 1117.5,
+      "Vikki": 1047.5,
+      "Vasu": 1081.5,
+      "Nabh": 0
+    },
+    "entry_fee": 56,
+    "winning_prize": 202
   }
 ]
