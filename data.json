@@ -671,5 +671,19 @@
     },
     "entry_fee": 56,
     "winning_prize": 202
+  },
+  {
+    "date": "2024-05-01",
+    "match_no": 50,
+    "match_between": "MI vs RR",
+    "players": {
+      "Abhishek": 851,
+      "Aman": 719,
+      "Vikki": 990.5,
+      "Vasu": 988,
+      "Nabh": 0
+    },
+    "entry_fee": 56,
+    "winning_prize": 202
   }
 ]
