@@ -657,5 +657,19 @@
     },
     "entry_fee": 56,
     "winning_prize": 202
+  },
+  {
+    "date": "2024-04-30",
+    "match_no": 49,
+    "match_between": "CSK vs PBKS",
+    "players": {
+      "Abhishek": 920.5,
+      "Aman": 676.5,
+      "Vikki": 827,
+      "Vasu": 1048.5,
+      "Nabh": 0
+    },
+    "entry_fee": 56,
+    "winning_prize": 202
   }
 ]
