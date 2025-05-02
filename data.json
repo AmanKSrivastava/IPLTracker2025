@@ -685,5 +685,19 @@
     },
     "entry_fee": 56,
     "winning_prize": 202
+  },
+  {
+    "date": "2024-05-02",
+    "match_no": 52,
+    "match_between": "GT vs SRH",
+    "players": {
+      "Abhishek": 1007,
+      "Aman": 906,
+      "Vikki": 994.5,
+      "Vasu": 761,
+      "Nabh": 0
+    },
+    "entry_fee": 56,
+    "winning_prize": 202
   }
 ]
